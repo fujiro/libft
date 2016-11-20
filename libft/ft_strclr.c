@@ -6,7 +6,7 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 07:58:31 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/09 13:53:22 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/19 19:44:34 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@ void	ft_strclr(char *str)
 	int		i;
 
 	i = 0;
-	while (str[i])
-		i++;
-	while (i >= 0)
+	if (str)
 	{
-		str[i] = '\0';
-		i--;
+		while (str[i])
+			i++;
+		while (i >= 0)
+		{
+			str[i] = '\0';
+			i--;
+		}
 	}
 }

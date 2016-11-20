@@ -6,13 +6,13 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 08:09:52 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/09 14:12:56 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/18 16:17:59 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(const char *s1, const char *s2, int n)
+int		ft_strnequ(const char *s1, const char *s2, int n)
 {
 	int		i;
 

@@ -6,7 +6,7 @@
 #    By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/09 19:15:26 by elcarrei          #+#    #+#              #
-#    Updated: 2016/11/09 19:43:14 by elcarrei         ###   ########.fr        #
+#    Updated: 2016/11/19 00:40:39 by elcarrei         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -16,7 +16,7 @@ SRC			=	$(shell ls | grep -E "ft_")
 
 OBJ			=	$(SRC:.c=.o)
 
-INC			=	./
+INC			=	./includes/
 
 CFLAGS		=	-Wall -Wextra -Werror
 
@@ -25,19 +25,19 @@ CC			=	/usr/bin/gcc
 RM			=	/bin/rm -f
 
 
-$(NAME)	:		$(OBJ)
-				$(CC) $(CFLAGS) -c $(SRCS) -I $(INC)
+all		:		$(NAME)
+
+$(NAME)	:
+				$(CC) $(CFLAGS) -c $(SRC) -I $(INC)
 				ar rc $(NAME) $(OBJ)
 				ranlib $(NAME)
 
 clean	:
 				$(RM) $(OBJ)
 
-all		:		$(NAME)
-
 fclean	:		clean
 				$(RM) $(NAME)
 
-re		:		fclean all
+re		:		clean fclean all
 
 .PHONY	:		all clean fclean re

@@ -6,25 +6,25 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 08:03:19 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/07 08:08:23 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/20 16:28:49 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strmap(char *str, char (*f)(char))
+#include "libft.h"
+
+char	*ft_strmap(const char *str, char (*f)(char))
 {
 	int		i;
-	char	*dest;
+	char	*dst;
 
 	i = 0;
-	while (str[i])
-		i++;
-	if (!(dest = malloc(sizeof(char) * i + 1)))
-		return (0);
-	i = 0;
+	if (!(dst = malloc(sizeof(char) * ft_strlen(str) + 1)))
+		return (NULL);
 	while (str[i])
 	{
-		dest[i] = f(str[i]);
+		dst[i] = f(str[i]);
 		i++;
 	}
-	return (dest);
+	dst[i] = str[i];
+	return (dst);
 }

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_ascii_value.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 16:37:14 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/18 16:05:16 by elcarrei         ###   ########.fr       */
+/*   Created: 2016/11/19 19:03:24 by elcarrei          #+#    #+#             */
+/*   Updated: 2016/11/19 19:26:50 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+int		ft_ascii_value(char *str)
 {
-	int		i;
+	unsigned int		i;
+	unsigned int		res;
 
 	i = 0;
-	while (src[i])
+	res = 0;
+	if (str[i])
 	{
-		dst[i] = src[i];
-		i++;
+		while (str[i])
+		{
+			res = res + str[i];
+			i++;
+		}
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (res);
 }

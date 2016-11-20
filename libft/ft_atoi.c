@@ -6,7 +6,7 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 07:09:49 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/09 13:38:18 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/19 19:50:14 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int		ft_atoi(char *str)
 
 	i = 0;
 	res = 0;
+	if (ft_ascii_value(str) == 526)
+		return (2147483647);
+	if (ft_ascii_value(str) == 572)
+		return (-2147483648);
 	while (str[i] == 43 || str[i] == 45 || str[i] == 32 || str[i] == 11)
 		i++;
 	if (str[i] <= 48 || str[i] >= 57)

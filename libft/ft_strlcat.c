@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 16:37:14 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/18 16:05:16 by elcarrei         ###   ########.fr       */
+/*   Created: 2016/11/18 17:15:17 by elcarrei          #+#    #+#             */
+/*   Updated: 2016/11/18 18:04:18 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
+	char	*tmp;
+	char	*reader;
+	size_t	len;
 
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	tmp = (char *)ft_memchr(dst, '\0', size);
+	if (tmp == NULL)
+		return (ft_strlen(src) + size);
+	reader = (char *)src;
+	len = (size_t)(tmp - dst) + ft_strlen(reader);
+	while ((size_t)(tmp - dst) < size - 1 && *reader != '\0')
+		*tmp++ = *reader++;
+	*tmp = '\0';
+	return (len);
 }

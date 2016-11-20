@@ -6,7 +6,7 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 07:59:52 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/09 13:59:43 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/18 16:11:41 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striter(char *str, void (*f) (char *))
 	i = 0;
 	while (str[i])
 	{
-		str[i] = f(str[i]);
+		f(&(str[i]));
 		i++;
 	}
 }

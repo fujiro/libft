@@ -6,16 +6,15 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 07:34:35 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/09 14:23:21 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/19 19:38:02 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_toupper(int c)
+char	ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
-	else
-		return (c);
+	return (c);
 }

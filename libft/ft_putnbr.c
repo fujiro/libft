@@ -6,7 +6,7 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 14:28:08 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/09 13:49:15 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/20 17:05:02 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,18 @@ void	ft_putnbr(int n)
 	int		i;
 
 	i = 1;
-	while (n / i > 9)
+	if (n == -2147483648)
 	{
-		ft_putchar(n % i + 48);
+		ft_putstr("-2147483648");
+		return ;
+	}
+	while (n / i > 9)
 		i = i * 10;
+	while (i != 1)
+	{
+		ft_putchar(n / i + 48);
+		n = n % i;
+		i = i / 10;
 	}
 	ft_putchar(n % i + 48);
 }

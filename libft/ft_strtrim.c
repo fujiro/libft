@@ -6,48 +6,35 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 08:44:02 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/18 18:09:09 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/21 16:13:45 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strtrim_addon(const char *str, char *dst)
-{
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (str[i])
-	{
-		while (str[i] == ' ' || str[i] == ',' || \
-			str[i] == '\n' || str[i] == '\t')
-			i++;
-		dst[j] = str[i];
-		i++;
-		j++;
-	}
-	dst[j] = '\0';
-	return (dst);
-}
-
 char		*ft_strtrim(char const *str)
 {
 	int		i;
 	int		j;
+	int		len;
 	char	*dst;
+	char	*rev;
 
 	i = 0;
 	j = 0;
-	while (str[i])
-	{
-		i++;
-		if (str[i] == ' ' || str[i] == ',' || \
-			str[i] == '\n' || str[i] == '\t')
-			j++;
-	}
-	if (!(dst = malloc(sizeof(char) * (i - j) + 1)))
+	if (!(rev = ft_strrev((char *)str)))
 		return (NULL);
-	return (ft_strtrim_addon(str, dst));
+	while (str[i] == ' ' || str[i] == ',' || \
+		str[i] == '\n' || str[i] == '\t')
+		i++;
+	while (rev[j] == ' ' || rev[j] == ',' || \
+		rev[j] == '\n' || rev[j] == '\t')
+		j++;
+	len = i + j;
+	if (!(dst = malloc(sizeof(char) * (ft_strlen(str) - len))))
+		return (NULL);
+	j = 0;
+	while (j <= (ft_strlen(str) - len))
+		dst[j++] = str[i++];
+	return (dst);
 }

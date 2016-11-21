@@ -6,7 +6,7 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 07:00:38 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/20 17:53:24 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/21 15:40:33 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,32 @@ char	*ft_strstr(const char *str, const char *to_find)
 {
 	int		i;
 	int		j;
+	int		pos;
+	char	*tmp;
 
 	i = 0;
 	j = 0;
+	tmp = (char *)str;
 	if (!(to_find))
-		return ((char *)str);
-	while (str[i])
+		return (&(((char *)str)[0]));
+	while (tmp[i])
 	{
-		if (str[i] == to_find[j])
+		pos = i;
+	while (tmp[i] == to_find[j] && tmp[i] != '\0')
+		{
 			j++;
-		if (str[j] == '\0')
-			return ((char *)to_find);
+			i++;
+		}
+		if (to_find[j] == '\0')
+			return (&(tmp[i - j]));
+		else
+		{
+			i = pos;
+			j = 0;
+		}
 		i++;
-		j = 0;
 	}
+	if (to_find[j] == tmp[i])
+		return (&(tmp[i - j]));
 	return (NULL);
 }

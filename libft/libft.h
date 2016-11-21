@@ -6,7 +6,7 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 13:37:23 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/20 16:29:09 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/20 20:15:34 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int					ft_atoi(char *str);
 int					ft_ascii_value(char *str);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
-int					ft_isasci(int c);
+int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -54,6 +54,7 @@ char				*ft_strncpy(char *dst, const char *src, size_t n);
 char				*ft_strnew(size_t size);
 char				*ft_strnstr\
 					(const char *str, const char *to_find, size_t size);
+char				*ft_strrev(char *str);
 char				*ft_strrchr(const char *str, int c);
 char				*ft_strstr(const char *str, const char *to_find);
 char				*ft_strsub(char const *str, unsigned int start, size_t len);
@@ -76,7 +77,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(const char *str);
 void				ft_putstr_fd(const char *str, int fd);
 void				ft_strclr(char *str);
-void				ft_strdel(char **as);
+void				ft_strdel(char **ap);
 void				ft_striter(char *str, void (*f) (char *));
 void				ft_striteri(char *str, void (*f) (unsigned int, char *));
 

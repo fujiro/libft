@@ -6,20 +6,17 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 07:55:16 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/09 13:57:50 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/20 19:16:15 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_strdel(char **ap)
 {
-	int		i;
-
-	i = 0;
-	while (as[i])
+	if (ap[0])
 	{
-		free(as[i]);
-		i++;
+		free(ap[0]);
+		ap[0] = NULL;
 	}
 }

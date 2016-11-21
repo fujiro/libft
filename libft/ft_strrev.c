@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 07:00:38 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/19 19:30:09 by elcarrei         ###   ########.fr       */
+/*   Created: 2016/11/20 19:55:49 by elcarrei          #+#    #+#             */
+/*   Updated: 2016/11/20 21:50:26 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *str, const char *to_find)
+char	*ft_strrev(char *str)
 {
 	int		i;
-	int		j;
+	char	*dst;
 
 	i = 0;
-	j = 0;
-	if (!(to_find))
-		return ((char *)str);
+	if (!(dst = malloc(sizeof(char) * ft_strlen(str) + 1)))
+		return (NULL);
+	dst[ft_strlen(str) + 1] = '\0';
 	while (str[i])
 	{
-		if (str[i] == to_find[j])
-			j++;
-		if (str[j] == '\0')
-			return ((char *)to_find);
+		dst[ft_strlen(str) - i] = str[i];
 		i++;
-		j = 0;
 	}
-	return (NULL);
+	return (dst);
 }

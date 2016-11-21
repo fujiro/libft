@@ -6,7 +6,7 @@
 /*   By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 08:52:07 by elcarrei          #+#    #+#             */
-/*   Updated: 2016/11/18 18:06:27 by elcarrei         ###   ########.fr       */
+/*   Updated: 2016/11/21 16:07:02 by elcarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char			**ft_strsplit(char const *str, char c)
 		return (0);
 	while (i < ft_count_words(str))
 	{
-		if (!(tab[i] = malloc(sizeof(char) * ft_strlen(str))))
+		if (!(tab[i] = malloc(sizeof(char) * ft_strlen(str) + 1)))
 			return (0);
 		i++;
 	}

@@ -6,7 +6,7 @@
 #    By: elcarrei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/09 19:15:26 by elcarrei          #+#    #+#              #
-#    Updated: 2016/11/19 00:40:39 by elcarrei         ###   ########.fr        #
+#    Updated: 2016/11/20 18:53:53 by elcarrei         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -16,7 +16,7 @@ SRC			=	$(shell ls | grep -E "ft_")
 
 OBJ			=	$(SRC:.c=.o)
 
-INC			=	./includes/
+INC			=	./
 
 CFLAGS		=	-Wall -Wextra -Werror
 
